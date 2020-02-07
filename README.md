@@ -1,4 +1,4 @@
-# CS122B - Frontend 1
+# CS122B - Frontend 2
 
 ### Pre-Setup
 
@@ -45,9 +45,31 @@ In case you get an error for a missing dependency just enter in these commands t
 | React Scripts    | `npm i react-scripts`    | https://www.npmjs.com/package/react-scripts    |
 | React Router DOM | `npm i react-router-dom` | https://www.npmjs.com/package/react-router-dom |
 
-### Notes
+## Notes
 
-##### this.setState()
+### Passing Variables and Functions
+
+Remember when passing around variable and functions
+
+If you want componenets down the tree to VIEW your variable, simply pass that varaible
+
+If you want componenets down the tree to MODIFY your varaible, then pass a function down the tree that allows the components to modify it as needed
+
+The function should be made in the Component that "owns" that varaible, as in which Component has it as part of its state because only that component can modify its own state.
+
+Pass variables and functions into Components like so:
+~~~
+<Componenet var={value} func={value}/>
+~~~
+!DO NOT CALL THE FUNCTION!
+~~~
+func={function} WORKS
+func={function()} DOES NOT WORK, This is calling the function and storing the return value
+~~~
+
+To get the passed variables and functions from inside the Componenet call `this.props.<NAME>`
+
+### this.setState()
 
 The way setState works is by taking an object and
 comparing the values in the new object and updateing
@@ -87,8 +109,7 @@ state = {
   };
 ```
 
-
-#### functions
+### Functions
 
 There are two ways of declaring functions
 
@@ -116,3 +137,49 @@ func = () => {
     this.setState() // This is fine.
   }
 ```
+
+### Router
+
+<Switch> is where you place all your page components. Inside of the switch you can list
+as many of <Route>'s as you would like.
+
+It takes two arguments:
+~~~
+to="/path"
+componenet={Component}
+~~~
+
+Remember, if you want to pass some varaibles inside of a componenet inside of Route you must then replace:
+`componenet={Componenet}`
+  with
+`render={props => <Componenet {...props} var={var}/>}`
+The reason for this is so that we can keep certain props that the Switch is trying to pass alive such as:
+~~~
+history
+location
+match
+~~~
+
+If you would like the user to be moved to another page simply use the history object. You can get it through this.props. 
+
+**IMPORTANT: The three objects will be passed to your componenet automaticly IF they are INSIDE OF SWITCH**
+**HOWEVER: if you have a component inside of that component YOU WILL NEED TO MANNUALY PASS IT along the chain.**
+
+There are two ways of moving the user to a new page, the latter lets you also supply an object to be given to the new page that will be storage in `location.state`
+
+~~~
+history.push("/path") 
+  and 
+history.push("/path", {key: value, key2: value})
+~~~
+
+### LocalStorage
+
+Using localStorage is similar to how we usedictionarys. 
+
+To set a variable call `localStorage.set("key", value)`
+To get a variable call `localStorage.get("key")`
+
+Local Storage persists through website refreshes so it is perfect for storing things we dont want to lose like a users session
+
+You must call `const localStorage = require("local-storage");` in any class that you want to use this in, it is the same local storage in the entire website regardless of where you call it as each website gets the same instance of the storage. So think of it as a global dictionary.

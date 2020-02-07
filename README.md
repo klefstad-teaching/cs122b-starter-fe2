@@ -45,9 +45,9 @@ In case you get an error for a missing dependency just enter in these commands t
 | React Scripts    | `npm i react-scripts`    | https://www.npmjs.com/package/react-scripts    |
 | React Router DOM | `npm i react-router-dom` | https://www.npmjs.com/package/react-router-dom |
 
-### Notes
+## Notes
 
-##### Passing Variables and Functions
+### Passing Variables and Functions
 
 Remember when passing around variable and functions
 
@@ -69,7 +69,7 @@ func={function()} DOES NOT WORK, This is calling the function and storing the re
 
 To get the passed variables and functions from inside the Componenet call `this.props.<NAME>`
 
-##### this.setState()
+### this.setState()
 
 The way setState works is by taking an object and
 comparing the values in the new object and updateing
@@ -109,8 +109,7 @@ state = {
   };
 ```
 
-
-##### functions
+### functions
 
 There are two ways of declaring functions
 
@@ -139,8 +138,7 @@ func = () => {
   }
 ```
 
-
-##### Router
+### Router
 
 <Switch> is where you place all your page components. Inside of the switch you can list
 as many of <Route>'s as you would like.
@@ -175,7 +173,7 @@ history.push("/path")
 history.push("/path", {key: value, key2: value})
 ~~~
 
-##### LocalStorage
+### LocalStorage
 
 Using localStorage is similar to how we usedictionarys. 
 

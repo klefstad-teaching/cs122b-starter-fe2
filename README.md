@@ -109,7 +109,7 @@ state = {
   };
 ```
 
-### functions
+### Functions
 
 There are two ways of declaring functions
 

@@ -16,6 +16,18 @@ import NavBar from "./NavBar";
   The function should be made in the Component that "owns" that 
   varaible, as in which Component has it as part of its state
   because only that component can modify its own state.
+  Pass variables and functions into Components like so:
+
+    <Componenet var={value} func={value}/>
+
+  IMPORTANT: DO NOT CALL THE FUNCTION
+
+  func={function}   WORKS
+  func={function()} DOES NOT WORK, This is calling the function 
+                                   and storing the return value
+
+  To get the passed variables and functions from inside 
+  the Componenet call `this.props.<NAME>`
 */
 class App extends Component {
   state = {};

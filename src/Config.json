@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:12345/api",
+  "idmEPs": {
+    "loginEP": "/idm/login"
+  }
+}

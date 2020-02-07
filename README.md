@@ -165,7 +165,7 @@ match
 If you would like the user to be moved to another page simply use the history object. You can get it through this.props. 
 
 **IMPORTANT: The three objects will be passed to your componenet automaticly IF they are INSIDE OF SWITCH**
-**HOWEVER: if you have a component inside of that componentYOU WILL NEED TO MANNUALY PASS IT along the chain.**
+**HOWEVER: if you have a component inside of that component YOU WILL NEED TO MANNUALY PASS IT along the chain.**
 
 There are two ways of moving the user to a new page, the latter lets you also supply an object to be given to the new page that will be storage in `location.state`
 

@@ -69,47 +69,22 @@ func={function()} DOES NOT WORK, This is calling the function and storing the re
 
 To get the passed variables and functions from inside the Componenet call `this.props.<NAME>`
 
-### this.setState()
+##### useState()
 
-The way setState works is by taking an object and
-comparing the values in the new object and updateing
-any overlap in the state value
+The way useState works is by getting a varaiable and a function to update the variable
 
 ```javascript
 // Starting state
-state = { 
-    loggedIn: true 
-  };
+const [ total, setTotal ] = useState();
+// Starting state With Default Value
+const [ page, setPage ] = useState(1);
 
-// Function Called
-this.setState({ loggedIn: false });
-
-// New State
-state = { 
-    loggedIn: true 
-  };
+// Function to Update
+setTotal(100);
 ```
 
-if there are more values in state like this:
 
-```javascript
-// Starting state
-state = {
-    loggedIn: true,
-    email: "user@uci.edu"
-  };
-
-// Function Called
-this.setState({ loggedIn: false });
-
-// New State
-state = {
-    loggedIn: false,
-    email: "user@uci.edu"   // Notice that email does not change
-  };
-```
-
-### Functions
+#### functions
 
 There are two ways of declaring functions
 
@@ -145,14 +120,14 @@ as many of <Route>'s as you would like.
 
 It takes two arguments:
 ~~~
-to="/path"
-componenet={Component}
+path="/path"
+component={Component}
 ~~~
 
 Remember, if you want to pass some varaibles inside of a componenet inside of Route you must then replace:
-`componenet={Componenet}`
+`component={Component}`
   with
-`render={props => <Componenet {...props} var={var}/>}`
+`render={props => <Component {...props} var={var}/>}`
 The reason for this is so that we can keep certain props that the Switch is trying to pass alive such as:
 ~~~
 history

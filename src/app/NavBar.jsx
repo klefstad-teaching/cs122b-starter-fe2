@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
+import {NavLink} from "react-router-dom";
 
 /*
     NavBar is used to place all of your NavLinks
@@ -18,7 +18,7 @@ import { NavLink } from "react-router-dom";
 
     When you want to have certain links show up depending 
     on the Apps state (like in an instance of a user being
-    loggedIn or out) use the coniditonal statement
+    loggedIn or out) use the conditional statement
         {boolean && <NavLink>}
     if you would like multiple components just make sure
     to wrap it in a <Fragment>
@@ -27,16 +27,17 @@ import { NavLink } from "react-router-dom";
     Fragment is imported here to show you an example of how
     to import it to react.
 */
-class NavBar extends Component {
-  render() {
+const NavBar = () => {
     return (
-      <nav className="nav-bar">
-        <NavLink className="nav-link" to="/login">
-          Login
-        </NavLink>
-      </nav>
+        <nav className="nav-bar">
+            <NavLink className="nav-link" to="/login">
+                Login
+            </NavLink>
+            <NavLink className="nav-link" to="/register">
+                Register
+            </NavLink>
+        </nav>
     );
-  }
 }
 
 export default NavBar;

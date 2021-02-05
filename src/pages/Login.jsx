@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 /*
   Using localStorage is similar to how we use
-  dictionarys. 
+  dictionary.
   
   To set a variable call `localStorage.set("key", value)`
   To get a variable call `localStorage.get("key")`
@@ -20,16 +20,12 @@ import React, { Component } from "react";
 */
 const localStorage = require("local-storage");
 
-class Login extends Component {
-  state = {};
-
-  render() {
+const Login = () => {
     return (
-      <div className="form-box">
-        <h1>Login </h1>
-      </div>
+        <div className="form-box">
+            <h1>Login </h1>
+        </div>
     );
-  }
 }
 
 export default Login;

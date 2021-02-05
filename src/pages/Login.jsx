@@ -20,7 +20,13 @@ import React from "react";
 */
 const localStorage = require("local-storage");
 
-const Login = () => {
+const Login = ({ history, location, match }) => {
+    // The Top ({ history, location, match }) is a short hand for the following code:
+    //     const Login = (props) => {
+    //         const { history, location, match } = props;
+    // If you want to accept more props just place it there like this:
+    //     const Login = ({ history, location, match, yourVar }) => {
+
     return (
         <div className="form-box">
             <h1>Login </h1>

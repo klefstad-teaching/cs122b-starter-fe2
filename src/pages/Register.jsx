@@ -20,7 +20,8 @@ import React from "react";
 */
 const localStorage = require("local-storage");
 
-const Register = () => {
+const Register = ({ history, location, match }) => {
+
     return (
         <div className="form-box">
             <h1>Register</h1>

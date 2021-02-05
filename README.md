@@ -39,6 +39,7 @@ In case you get an error for a missing dependency just enter in these commands t
 | :--------------- | :----------------------- | :--------------------------------------------- |
 | Axios            | `npm i axios`            | https://www.npmjs.com/package/axios            |
 | js Cookie        | `npm i js-cookie`        | https://www.npmjs.com/package/js-cookie        |
+| Local Storage    | `npm i local-storage`    | https://www.npmjs.com/package/local-storage    | 
 | Create React App | `npm i create-react-app` | https://www.npmjs.com/package/create-react-app |
 | React            | `npm i react`            | https://www.npmjs.com/package/react            |
 | React DOM        | `npm i react-dom`        | https://www.npmjs.com/package/react-dom        |
